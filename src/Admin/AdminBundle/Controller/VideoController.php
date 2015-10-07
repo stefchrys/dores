@@ -54,7 +54,7 @@ class VideoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('video_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('video', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Video:new.html.twig', array(
