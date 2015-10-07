@@ -14,7 +14,9 @@
 
                     <div class="panel-body panel-body-custom">
                     	{% for c1 in cat1 %}
+                        {{c1.titre}} par {{c1.auteur}}
                         <video src="{{ asset('video/'~ c1.source) }}" width="100%" controls preload="none" ></video>
+
                         {% endfor %}
                     </div>
                            
@@ -26,6 +28,7 @@
 
                     <div class="panel-body panel-body-custom">
                         {% for c2 in cat2 %}
+                        {{c2.titre}} par {{c2.auteur}}
                         <video src="{{ asset('video/'~ c2.source) }}" width="100%" controls preload="none" ></video>
                         {% endfor %}
                     </div>
@@ -38,6 +41,7 @@
 
                     <div class="panel-body panel-body-custom">
                         {% for c3 in cat3 %}
+                        {{c3.titre}} par {{c3.auteur}}
                         <video src="{{ asset('video/'~ c3.source) }}" width="100%" controls preload="none" ></video>
                         {% endfor %}
                     </div>
@@ -55,6 +59,7 @@
                     </div>
                     <div class="panel-body panel-body-custom">
                         {% for c1 in cat1 %}
+                        {{c1.titre}} par {{c1.auteur}}
                         <video src="{{ asset('video/'~ c1.source) }}" width="100%" controls preload="none" ></video>
                         {% endfor %} 
                     </div>                          
@@ -66,6 +71,7 @@
                     </div>
                     <div class="panel-body panel-body-custom">
                         {% for c2 in cat2 %}
+                        {{c2.titre}} par {{c2.auteur}}
                         <video src="{{ asset('video/'~ c2.source) }}" width="100%" controls preload="none" ></video>
                         {% endfor %} 
                     </div>                          
@@ -82,6 +88,7 @@
                     </div>
                     <div class="panel-body panel-body-custom">
                         {% for c1 in cat1 %}
+                        {{c1.titre}} par {{c1.auteur}}
                         <video src="{{ asset('video/'~ c1.source) }}" width="100%" controls preload="none" ></video>
                         {% endfor %}  
                     </div>                          
@@ -93,6 +100,7 @@
                     </div>
                     <div class="panel-body panel-body-custom">
                         {% for c2 in cat2 %}
+                        {{c2.titre}} par {{c2.auteur}}
                         <video src="{{ asset('video/'~ c2.source) }}" width="100%" controls preload="none"  ></video>
                         {% endfor %} 
                     </div>                          
