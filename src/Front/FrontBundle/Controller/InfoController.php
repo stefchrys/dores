@@ -19,9 +19,9 @@ class InfoController extends Controller
     public function indexAction()
     {
 
-    	$cat1 = $this->getCat('test');
-    	$cat2 = $this->getCat('presse');
-    	$cat3 = $this->getCat('podcast');
+    	$cat1 = $this->getCat('cat1');
+    	$cat2 = $this->getCat('cat2');
+    	$cat3 = $this->getCat('cat3');
 
     	$arr = $this->get('front.base.service')->recupInfo();
 
