@@ -1,0 +1,105 @@
+{% extends "::base.html.twig" %}
+
+
+
+{% block contenu %}
+<!--Contenu principal @media>1200px-->
+            <div class="row visible-lg">
+
+                <div class="panel panel-default col-sm-4 col-md-4">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">{{livre.titre}}</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                    	<img src="{{ asset('img/collection/' ~ livre.image) }}">
+                    </br></br>
+                    	<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
+							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+						</form>
+                    </div>                           
+                </div>
+
+
+                <div class="panel panel-default col-sm-8 col-md-8">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">{{livre.sousTitre}}</h3>
+                    </div>
+
+                    <div class="panel-body panel-body-custom">
+                        {{livre.synopsis | raw}}
+
+                        {{livre.footer | raw}}
+
+                    </div>
+                           
+                </div>
+                  
+                <hr>
+            </div> 
+            <!--fin contenu principal @media>1200px-->
+
+            <!--Contenu principal @media >768 && <1200 px-->
+            <div class="row visible-md visible-sm">
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">{{livre.titre}}</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                    	<img src="{{ asset('img/collection/' ~ livre.image) }}">
+                    </br></br>
+                    	<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
+							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+						</form>
+                    </div>                           
+                </div>
+
+
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">{{livre.sousTitre}}</h3>
+                    </div>
+
+                    <div class="panel-body panel-body-custom">
+                        {{livre.synopsis | raw}}
+
+                        {{livre.footer | raw}}
+
+                    </div>
+                           
+                </div>
+                  
+                <hr>
+            </div> 
+            <!--fin contenu principal @media >768 && <1200 px-->
+             <!--Contenu principal @media <768 px-->
+            <div class="row visible-xs">
+                 
+
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">{{livre.titre}}</h3>
+                    </div>
+
+                    <div class="panel-body panel-body-custom">
+                        {{livre.synopsis | raw}}
+
+                        {{livre.footer | raw}}
+
+                        <form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
+							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+						</form> 
+                    </div>
+                         
+                </div>
+                <hr>
+            </div>
+            <!--fin contenu principal @media <768-->
+
+            
+{% endblock %}

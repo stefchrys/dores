@@ -1,0 +1,58 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+<h1><strong>ACCUEIL</strong></h1>
+<div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Liste des éléments</h3> 
+   </div>  
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Auteur</th>
+                <th>Titre</th>
+                <th>Collection</th>
+                <th>Synopsis</th>
+                <th>Image</th>
+                <th>Source</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                
+                <td>{{ entity.auteur }}</td>
+                <td>{{ entity.titre }}</td>
+                <td>{{ entity.collec }}</td>
+                <td>{{ entity.synopsis }}</td>
+                <td>{{ entity.image }}</td>
+                <td>{{ entity.source }}</td>
+                
+                <td>
+                <ul>
+                    
+                    <li>
+                        <a href="{{ path('accueil_edit', { 'id': entity.id }) }}"><span class="label label-info">edit</span></a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table>
+        <tr>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a></td>
+            
+        </tr>
+    </table>
+</div>
+
+    
+   
+    
+    {% endblock %}

@@ -1,0 +1,83 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+
+    <h1>
+        <strong>BIBLIOTHEQUE</strong>
+    </h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+   </div>
+
+    {{form_start(edit_form,{ 'attr': {'role': 'form'} })}} 
+    
+    <div class="form-group has-success">
+    <label for="pw">Première</label>
+    {{ form_widget(edit_form.premiere,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Auteur</label>
+    {{ form_widget(edit_form.auteur,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Titre</label>
+    {{ form_widget(edit_form.titre,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Sous-Titre</label>
+    {{ form_widget(edit_form.sousTitre,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Collection</label>
+    {{ form_widget(edit_form.collection,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Categorie</label>
+    {{ form_widget(edit_form.categorie,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Prix</label>
+    {{ form_widget(edit_form.prix,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Image</label>
+    {{ form_widget(edit_form.image,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Preface</label>
+    {{ form_widget(edit_form.preface,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Synopsis</label>
+    {{ form_widget(edit_form.synopsis,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Footer</label>
+    {{ form_widget(edit_form.footer,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <table>
+        <tr>
+            <td>{{form_end(edit_form)}}</td>
+            <td>{{ form(delete_form) }}</td>           
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>
+            <td><a href="{{ path('livres') }}" role="button" class= "btn btn-success"> ACCUEIL BIBLIOTHEQUE</a></td>
+        </tr>
+    </table>
+   </div>
+
+    
+
+   
+{% endblock %}

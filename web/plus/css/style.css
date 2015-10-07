@@ -1,0 +1,211 @@
+
+textarea {
+   min-height: 200px !important;   
+}
+
+
+.espace-livres{
+    
+    margin-bottom: 70px;
+    
+}
+.pad-right{
+    padding-right: 10px;
+}
+.bandelette{
+    padding:5px;
+    border: solid 1px;
+    border-color: #ccc;
+    border-radius:3px;   
+}
+.container ,.containerAdmin{
+	background-color: white;
+
+}
+
+body{
+	background-color: black;
+}
+#moncarrousel{
+	width:95%;
+	margin-right: auto;
+	margin-left: auto;
+}
+hr{
+	 background-color: black; height: 2px; border: 0;width:95%;
+}
+.gris,#gris{
+	background-color: #C0C0C0;
+}
+.noir,#noir{
+	background-color: black;
+}
+#auteur1,#titre1,#auteur2,#titre2{
+	font-weight: bold;
+}
+#resume2{
+	color:white;
+}
+
+#auteur1{
+	color:black;
+}
+#auteur2{
+	color:white;
+}
+#titre1,#titre2{
+	color:#6E0B14;
+}
+#type1{
+	color:#6E0B14;
+	font-style:italic;
+}
+
+.btn-perso1 { 
+   color:white; 
+   background-color: black; 
+   border-color: black; 
+}
+.btn-perso2{ 
+   color:#C0C0C0; 
+   background-color: #6E0B14 ; 
+   border-color: #6E0B14; 
+}
+
+.agenda{
+	color: white;
+	background-color: black;
+
+	margin-right: auto;
+	margin-left: auto;
+}
+.panel-default > .panel-heading-custom{
+	background: #6E0B14;
+	color :black;
+}
+.panel-default > .panel-body-custom{
+	background:#C0C0C0;
+	color:black;
+}
+
+.panel-default > .panel-body-custom2{
+	background:#C0C0C0;;
+	color:black;
+}
+.panel-title{
+	font-weight: bold;
+    color:white;
+}
+.nav-perso{
+	width:98%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.navbar-default-perso{
+	background: black;
+	width:98%;
+}
+.navbar-collapse,.navbar-header{
+	background-color: #000;
+	
+}
+.navbar-default .navbar-brand{
+    color: white !important;
+    background-color: transparent;
+}
+
+.navbar-toggle{
+    background-color:  #6E0B14;
+}
+.navbar-collapse >.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: red;
+}
+
+.navbar-collapse >.navbar-nav > li > a {
+	color: white;
+}
+.power{
+	background-color: black;
+}
+
+.btn-twitter {
+    background: #00acee;
+    border-radius: 0;
+    color: #fff
+}
+.btn-twitter:link, .btn-twitter:visited {
+    color: #fff
+}
+.btn-twitter:active, .btn-twitter:hover {
+    background: #0087bd;
+    color: #fff
+}
+.btn-facebook {
+    background: #3b5998;
+    border-radius: 0;
+    color: #fff
+}
+.btn-facebook:link, .btn-facebook:visited {
+    color: #fff
+}
+.btn-facebook:active, .btn-facebook:hover {
+    background: #30477a;
+    color: #fff
+}
+.btn-googleplus {
+    background: #e93f2e;
+    border-radius: 0;
+    color: #fff
+}
+.btn-googleplus:link, .btn-googleplus:visited {
+    color: #fff
+}
+.btn-googleplus:active, .btn-googleplus:hover {
+    background: #ba3225;
+    color: #fff
+}
+.btn-stumbleupon {
+    background: #f74425;
+    border-radius: 0;
+    color: #fff
+}
+.btn-stumbleupon:link, .btn-stumbleupon:visited {
+    color: #fff
+}
+.btn-stumbleupon:active, .btn-stumbleupon:hover {
+    background: #c7371e;
+    color: #fff
+}
+.btn-linkedin {
+    background: #0e76a8;
+    border-radius: 0;
+    color: #fff
+}
+.btn-linkedin:link, .btn-linkedin:visited {
+    color: #fff
+}
+.btn-linkedin:active, .btn-linkedin:hover {
+    background: #0b6087;
+    color: #fff
+}
+
+
+
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+    color:#fff; 
+    background: #6E0B14;
+
+ }
+ .center{
+    text-align: center;
+ }
+
+ .blanc{
+    color:white;
+ }
+ .panel {
+    border: 0;
+}
+

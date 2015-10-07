@@ -1,0 +1,38 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+<h1><strong>INFO</strong></h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+    </div>
+    <table class="table table-striped">
+        <tbody>
+            
+            <tr>
+                <th>Code</th>
+                <td>{{ entity.code }}</td>
+            </tr>
+            
+
+            <tr>
+                <th>Categorie</th>
+                <td>{{ entity.categorie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+    <table>
+        <tr>
+            <td>{{ form(delete_form) }}</td>
+            <td>
+                <a href="{{ path('info_edit', { 'id': entity.id }) }}" role="button" class="btn btn-warning">MODIFIER</a>
+            </td>
+            <td><a href="{{ path('info') }}" role="button" class= "btn btn-success"> ACCUEIL INFO</a></td>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>            
+        </tr>
+    </table>
+
+</div>
+{% endblock %}

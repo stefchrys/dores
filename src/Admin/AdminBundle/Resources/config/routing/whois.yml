@@ -1,0 +1,30 @@
+whois:
+    path:     /
+    defaults: { _controller: "AdminBundle:Whois:index" }
+
+whois_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Whois:show" }
+
+whois_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Whois:new" }
+
+whois_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Whois:create" }
+    methods:  POST
+
+whois_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Whois:edit" }
+
+whois_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Whois:update" }
+    methods:  [POST, PUT]
+
+whois_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Whois:delete" }
+    methods:  [POST, DELETE]

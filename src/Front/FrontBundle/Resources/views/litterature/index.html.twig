@@ -1,0 +1,82 @@
+{% extends "::base.html.twig" %}
+
+
+
+{% block contenu %}
+ 
+<div class="row ">
+    <div class="col-sm-12 col-md-12 "> 
+        <div class="caption" id="gris">
+            <h3 id="titre1">Roman</h3>
+        </div>
+    </div>
+    {% for rom in roman %}
+        <div class="panel panel-default col-sm-3 col-md-3 ">
+            <div class="media espace-livres "> 
+                <a class="pull-left" <a href="{{ path('front_livre', { 'id': rom.id }) }}">
+                <img width="100" height="154" class="media-object" src="{{ asset('img/collection/'~ rom.image) }}" alt="Roman"> 
+                </a> 
+                <div class="media-body"> 
+                    <h4 class="media-heading">{{ rom.auteur }}</h4> 
+                    <p>{{ rom.titre }}</p> 
+                    
+                    
+                    <p><font color="#FF0000">{{ rom.prix }}€</font></p>
+                    
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="row ">
+    <div class="col-sm-12 col-md-12 "> 
+        <div class="caption" id="gris">
+            <h3 id="titre1">Poesie</h3>
+        </div>
+    </div>
+    {% for pos in poesie %}
+        <div class="panel panel-default col-sm-3 col-md-3 ">
+            <div class="media espace-livres "> 
+                <a class="pull-left" href="{{ path('front_livre', { 'id': pos.id }) }}"> 
+                <img width="100" height="154" class="media-object" src="{{ asset('img/collection/'~ pos.image) }}" alt="Poesie"> 
+                </a> 
+                <div class="media-body"> 
+                    <h4 class="media-heading">{{ pos.auteur }}</h4> 
+                    <p>{{ pos.titre }}</p> 
+                     
+                    
+                    <p><font color="#FF0000">{{ pos.prix }}€</font></p>
+                    
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="row ">
+    <div class="col-sm-12 col-md-12 "> 
+        <div class="caption" id="gris">
+            <h3 id="titre1">Théatre</h3>
+        </div>
+    </div>
+    {% for the in theatre %}
+        <div class="panel panel-default col-sm-3 col-md-3 ">
+            <div class="media espace-livres "> 
+                <a class="pull-left" href="{{ path('front_livre', { 'id': the.id }) }}"> 
+                <img width="100" height="154" class="media-object" src="{{ asset('img/collection/'~ the.image) }}" alt="Theatre"> 
+                </a> 
+                <div class="media-body"> 
+                    <h4 class="media-heading">{{ the.auteur }}</h4> 
+                    <p>{{ the.titre }}</p> 
+                    
+                    
+                    <p><font color="#FF0000">{{ the.prix }}€</font></p>
+                   
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

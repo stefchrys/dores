@@ -1,0 +1,37 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+<h1><strong>Agenda</strong></h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+    </div> 
+
+    <table class="table table-striped">
+        <tbody>
+            
+            
+
+            <tr>
+                <th>Source</th>
+                <td>{{ entity.source }}</td>
+            </tr>
+
+           
+        </tbody>
+    </table>
+
+   <table>
+        <tr>
+            <td>{{ form(delete_form) }}</td>
+            <td>
+                <a href="{{ path('slider_edit', { 'id': entity.id }) }}" role="button" class="btn btn-warning">MODIFIER</a>
+            </td>
+            <td><a href="{{ path('slider') }}" role="button" class= "btn btn-success"> ACCUEIL SLIDER</a></td>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>            
+        </tr>
+    </table>
+   
+
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+<h1>
+        <strong>VIDEO</strong>
+    </h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+   </div>    
+
+    {{form_start(edit_form,{ 'attr': {'role': 'form'} })}} 
+
+    <div class="form-group has-success">
+    <label for="pw">Auteur</label>
+    {{ form_widget(edit_form.auteur,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Titre</label>
+    {{ form_widget(edit_form.titre,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    
+
+    <div class="form-group has-success">
+    <label for="pw">Source</label>
+    {{ form_widget(edit_form.source,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Catégorie</label>
+    {{ form_widget(edit_form.categorie,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+
+    <table>
+        <tr>
+            <td>{{form_end(edit_form)}}</td>
+            <td>{{ form(delete_form) }}</td>           
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>
+            <td><a href="{{ path('video') }}" role="button" class= "btn btn-success"> ACCUEIL VIDEO </a></td>
+        </tr>
+    </table>
+   </div>
+
+   
+{% endblock %}

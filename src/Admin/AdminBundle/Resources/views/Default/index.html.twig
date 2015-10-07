@@ -1,0 +1,86 @@
+{% extends '::admin.html.twig' %}
+    
+
+     
+      {% block contenu %}
+      <style type="text/css">
+      span.glyphicon {
+    font-size: 5em;
+}
+      </style>
+      
+      
+     <div class="well well-lg text-center text-info"> 
+            <h1><strong>Administration :</strong></h1> 
+        </div> 
+    <div class="table-responsive"> 
+        <table class="table">
+          <thead>
+
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="{{ path('agenda') }}" data-toggle="tooltip" title="Agenda">
+                  <span class="glyphicon glyphicon-calendar " ></span>
+                </a>
+              </td>
+                            
+              <td>
+                <a href="{{ path('slider') }}"  data-toggle="tooltip" title="Slider">
+                  <span class="glyphicon glyphicon-th-large "></span> 
+                </a>
+              </td>
+              <td>
+                <a href="{{ path('whois') }}"  data-toggle="tooltip" title="Qui sommes nous?">
+                  <span class="glyphicon glyphicon-user " ></span>  
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="{{ path('footer') }}"  data-toggle="tooltip" title="Footer">
+                    <span class="glyphicon glyphicon-copyright-mark " ></span>
+                </a>
+              </td>
+              <td>
+                <a href="{{ path('accueil') }}" data-toggle="tooltip" title="Accueil">
+                  <span class="glyphicon glyphicon-home "  ></span> 
+                </a>
+              </td>
+              <td>
+                <a href="{{ path('livres') }}" data-toggle="tooltip" title="Bibliothèque">
+                  <span class="glyphicon glyphicon-leaf " ></span>
+                </a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <a href="{{ path('audio') }}" data-toggle="tooltip" title="Audio">
+                  <span class="glyphicon glyphicon-headphones "  ></span>
+                </a>
+                
+              </td>
+              <td>
+                <a href="{{ path('video') }}" data-toggle="tooltip" title="Vidéo">
+                  <span class="glyphicon glyphicon-facetime-video "  ></span>
+                </a>
+              </td>
+              <td>
+                <a href="{{ path('info') }}" data-toggle="tooltip" title="Info">
+                  <span class="glyphicon glyphicon-italic "  ></span>
+                </a>
+              </td>
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
+
+      {% endblock %}
+
+    
+

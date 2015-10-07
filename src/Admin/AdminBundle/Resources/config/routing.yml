@@ -1,0 +1,49 @@
+#DEPART
+admin_homepage:
+    path:     /
+    defaults: { _controller: AdminBundle:Default:index }
+
+#LIVRES
+admin_livres:
+    resource: "@AdminBundle/Resources/config/routing/livres.yml"
+    prefix:   /livres
+
+#VIDEO
+admin_video:
+    resource: "@AdminBundle/Resources/config/routing/video.yml"
+    prefix:   /video
+
+#AUDIO
+admin_audio:
+    resource: "@AdminBundle/Resources/config/routing/audio.yml"
+    prefix:   /audio
+
+#WHOIS
+admin_whois:
+    resource: "@AdminBundle/Resources/config/routing/whois.yml"
+    prefix:   /whois
+
+#AGENDA
+admin_agenda:
+    resource: "@AdminBundle/Resources/config/routing/agenda.yml"
+    prefix:   /agenda
+
+#SLIDER
+admin_slider:
+    resource: "@AdminBundle/Resources/config/routing/slider.yml"
+    prefix:   /slider
+
+#ACCUEIL
+admin_accueil:
+    resource: "@AdminBundle/Resources/config/routing/accueil.yml"
+    prefix:   /accueil
+
+#FOOTER
+admin_footer:
+    resource: "@AdminBundle/Resources/config/routing/footer.yml"
+    prefix:   /footer
+
+#INFO
+admin_info:
+    resource: "@AdminBundle/Resources/config/routing/info.yml"
+    prefix:   /info

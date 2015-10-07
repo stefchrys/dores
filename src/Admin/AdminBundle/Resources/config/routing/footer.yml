@@ -1,0 +1,30 @@
+footer:
+    path:     /
+    defaults: { _controller: "AdminBundle:Footer:index" }
+
+footer_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Footer:show" }
+
+footer_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Footer:new" }
+
+footer_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Footer:create" }
+    methods:  POST
+
+footer_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Footer:edit" }
+
+footer_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Footer:update" }
+    methods:  [POST, PUT]
+
+footer_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Footer:delete" }
+    methods:  [POST, DELETE]

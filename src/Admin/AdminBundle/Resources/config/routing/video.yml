@@ -1,0 +1,30 @@
+video:
+    path:     /
+    defaults: { _controller: "AdminBundle:Video:index" }
+
+video_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Video:show" }
+
+video_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Video:new" }
+
+video_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Video:create" }
+    methods:  POST
+
+video_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Video:edit" }
+
+video_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Video:update" }
+    methods:  [POST, PUT]
+
+video_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Video:delete" }
+    methods:  [POST, DELETE]

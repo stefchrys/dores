@@ -1,0 +1,73 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Accueil</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ entity.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Collec</th>
+                <td>{{ entity.collec }}</td>
+            </tr>
+            <tr>
+                <th>Synopsis</th>
+                <td>{{ entity.synopsis }}</td>
+            </tr>
+            <tr>
+                <th>Source</th>
+                <td>{{ entity.source }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('accueil') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('accueil_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+{% block nav %}
+        {% endblock %}
+
+        {% block slider %}
+        {% endblock %}
+
+        {% block agenda %}
+        {% endblock %}
+
+        {% block whois %}
+        {% endblock %}
+
+        {% block lettre %}
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+        
+        {% block javascripts %}
+        {% endblock %}
+
+        {% block powered %}
+             <script src="{{ asset('plus/js/jquery.js') }}" type="text/javascript"  ></script>
+             <script src="{{ asset('dist/js/bootstrap.min.js') }}" type="text/javascript"  ></script>
+        {% endblock %}

@@ -1,0 +1,36 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu%}
+    <h1>
+        <strong>SLIDER</strong>
+    </h1>
+    <div class="panel panel-success"> 
+        <div class="panel-heading"> 
+          <h3 class="panel-title">Ajout élément</h3> 
+        </div>
+    </div>
+
+
+    {{form_start(form,{ 'attr': {'role': 'form'} })}} 
+
+    
+
+    <div class="form-group has-success">
+    <label for="pw">Source</label>
+    {{ form_widget(form.source,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    
+
+    <table>
+        <tr>                                
+            <td>{{form_end(form)}}</td>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>
+            <td><a href="{{ path('slider') }}" role="button" class= "btn btn-success"> ACCUEIL SLIDER</a></td>
+        </tr>
+    </table>
+
+
+
+{% endblock %}
+

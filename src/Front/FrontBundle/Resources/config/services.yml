@@ -1,0 +1,5 @@
+services:
+
+    front.base.service:
+        class: Front\FrontBundle\Services\Base
+        arguments: [ "@doctrine.orm.entity_manager" ]

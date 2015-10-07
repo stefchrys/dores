@@ -1,0 +1,30 @@
+info:
+    path:     /
+    defaults: { _controller: "AdminBundle:Info:index" }
+
+info_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Info:show" }
+
+info_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Info:new" }
+
+info_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Info:create" }
+    methods:  POST
+
+info_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Info:edit" }
+
+info_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Info:update" }
+    methods:  [POST, PUT]
+
+info_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Info:delete" }
+    methods:  [POST, DELETE]

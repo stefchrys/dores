@@ -1,0 +1,43 @@
+
+
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+    <h1>
+    <button type="button" class="btn btn-default "><a href="{{ path('admin_homepage') }}">ACCUEIL ADMIN</a> </button>
+    <button type="button" class="btn btn-default "><a href="{{ path('footer') }}">ACCUEIL footer</a> </button>
+
+    footer</h1>
+<div class="panel panel-success"> 
+<div class="panel-heading"> 
+      <h3 class="panel-title">Liste des éléments</h3> 
+   </div> 
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Row1</th>
+                <td>{{ entity.contact }}</td>
+            </tr>
+            <tr>
+                <th>Row2</th>
+                <td>{{ entity.diffusion }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+   
+    <button class="btn btn-default">
+        <a href="{{ path('footer_edit', { 'id': entity.id }) }}">
+            Modifier la ligne
+        </a>
+    </button>
+    
+    {{ form(delete_form) }}
+
+</div>
+{% endblock %}

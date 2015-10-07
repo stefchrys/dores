@@ -1,0 +1,36 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+     <h1>
+        <strong>FOOTER</strong>
+    </h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+   </div> 
+
+    {{form_start(edit_form,{ 'attr': {'role': 'form'} })}} 
+
+    <div class="form-group has-success">
+    <label for="pw">Contact</label>
+    {{ form_widget(edit_form.contact,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Diffusion</label>
+    {{ form_widget(edit_form.diffusion,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <table>
+        <tr>
+            <td>{{form_end(edit_form)}}</td>          
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>
+            <td><a href="{{ path('footer') }}" role="button" class= "btn btn-success"> ACCUEIL FOOTER </a></td>
+        </tr>
+    </table>
+   </div>
+   
+
+   
+{% endblock %}
+

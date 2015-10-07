@@ -1,0 +1,68 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+
+<h1><strong>BIBLIOTHEQUE</strong></h1>
+<div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Liste des éléments</h3> 
+   </div>
+<div id="accordeon" >
+    {% for entity in entities %}     
+        <h3><a href="#">{{ entity.titre }}</a></h3>
+        <div>
+            <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Premiere</th>
+                <th>ID</th>
+                <th>Auteur</th>
+                <th>Titre</th>
+                <th>Sous-Titre</th>
+                <th>Collection</th>
+                <th>Categorie</th>
+                <th>Prix</th>
+                <th>Image</th>
+                <th>Preface</th>
+                <th>Synopsis</th>
+                <th>Footer</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr>    
+                <td>{{ entity.premiere }}</td>           
+                <td>{{ entity.id }}</td>
+                <td>{{ entity.auteur }}</td>
+                <td>{{ entity.titre }}</td>
+                <td>{{ entity.sousTitre }}</td>
+                <td>{{ entity.collection }}</td>
+                <td>{{ entity.categorie }}</td>
+                <td>{{ entity.prix }}</td>
+                <td>{{ entity.image }}</td>
+                <td>(...)</td>
+                <td>(...)</td>
+                <td>{{ entity.footer }}</td>
+
+                <td>
+                <ul>    
+                    <li>
+                        <a href="{{ path('livres_edit', { 'id': entity.id }) }}"><span class="label label-info">edit</span></a>
+                    </li>
+                </ul>
+                </td>                
+            </tr>
+            </tbody>
+        </table>
+        </div>     
+    {% endfor %}
+</div> 
+<table>
+    <tr>
+        <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a></td>
+        <td><a href="{{ path('livres_new') }}" role="button" class="btn btn-success">AJOUTER UNE LIGNE</a></td>
+    </tr>
+</table>  
+    
+    {% endblock %}
+

@@ -1,0 +1,31 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+
+front_audio:
+    path:     /audio/
+    defaults: { _controller: FrontBundle:Audio:index }
+
+front_video:
+    path:     /video/
+    defaults: { _controller: FrontBundle:Video:index }
+
+front_info:
+    path:     /info/
+    defaults: { _controller: FrontBundle:Info:index }
+
+front_xix:
+    path:     /xix/
+    defaults: { _controller: FrontBundle:Xix:index }
+
+front_essais:
+    path:     /essais/
+    defaults: { _controller: FrontBundle:Essais:index }
+
+front_litterature:
+    path:     /litterature/
+    defaults: { _controller: FrontBundle:Litterature:index }
+
+front_livre:
+    path:     /livre/{id}/
+    defaults: { _controller: FrontBundle:Livre:index }

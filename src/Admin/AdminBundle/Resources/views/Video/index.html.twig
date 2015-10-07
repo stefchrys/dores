@@ -1,0 +1,55 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+<h1><strong>VIDEO</strong></h1>
+<div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Liste des éléments</h3> 
+   </div> 
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                
+                <th>Auteur</th>
+                <th>Titre</th>
+               
+                <th>Source</th>
+                <th>Categorie</th>
+                <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                
+                <td>{{ entity.auteur }}</td>
+                <td>{{ entity.titre }}</td>
+               
+                <td>{{ entity.source }}</td>
+                <td>{{ entity.categorie }}</td>
+                <td>
+                <ul>
+                    
+                    <li>
+                        <a href="{{ path('video_edit', { 'id': entity.id }) }}"><span class="label label-info">edit</span></a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <table>
+        <tr>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a></td>
+            <td><a href="{{ path('video_new') }}" role="button" class="btn btn-success">AJOUTER</a></td>
+        </tr>
+    </table>
+</div>
+
+    
+   
+    
+    {% endblock %}

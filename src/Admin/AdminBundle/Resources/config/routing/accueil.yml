@@ -1,0 +1,30 @@
+accueil:
+    path:     /
+    defaults: { _controller: "AdminBundle:Accueil:index" }
+
+accueil_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Accueil:show" }
+
+accueil_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Accueil:new" }
+
+accueil_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Accueil:create" }
+    methods:  POST
+
+accueil_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Accueil:edit" }
+
+accueil_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Accueil:update" }
+    methods:  [POST, PUT]
+
+accueil_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Accueil:delete" }
+    methods:  [POST, DELETE]

@@ -1,0 +1,43 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu%}
+    <h1>
+    	<strong>AGENDA</strong>
+    </h1>
+    <div class="panel panel-success"> 
+	    <div class="panel-heading"> 
+	      <h3 class="panel-title">Ajout élément</h3> 
+	   	</div>
+	</div>
+
+
+    {{form_start(form,{ 'attr': {'role': 'form'} })}} 
+
+    <div class="form-group has-success">
+    <label for="pw">Colonne 1</label>
+    {{ form_widget(form.row1,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Colonne 2</label>
+    {{ form_widget(form.row2,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Colonne 3</label>
+    {{ form_widget(form.row3,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    
+
+    <table>
+        <tr>                                
+            <td>{{form_end(form)}}</td>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>
+            <td><a href="{{ path('agenda') }}" role="button" class= "btn btn-success"> ACCUEIL AGENDA</a></td>
+        </tr>
+    </table>
+    
+
+
+{% endblock %}

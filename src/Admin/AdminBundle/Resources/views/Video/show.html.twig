@@ -1,0 +1,49 @@
+
+
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+    <h1><strong>VIDEO</strong></h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+    </div> 
+    <table class="table table-striped">
+        <tbody>
+            
+            <tr>
+                <th>Auteur</th>
+                <td>{{ entity.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            
+
+            <tr>
+                <th>Source</th>
+                <td>{{ entity.source }}</td>
+            </tr>
+
+            <tr>
+                <th>Categorie</th>
+                <td>{{ entity.categorie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+    <table>
+        <tr>
+            <td>{{ form(delete_form) }}</td>
+            <td>
+                <a href="{{ path('video_edit', { 'id': entity.id }) }}" role="button" class="btn btn-warning">MODIFIER</a>
+            </td>
+            <td><a href="{{ path('video') }}" role="button" class= "btn btn-success"> ACCUEIL VIDEO</a></td>
+            <td><a href="http://deja.local/app_dev.php/admin" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>            
+        </tr>
+    </table>
+
+</div>
+{% endblock %}

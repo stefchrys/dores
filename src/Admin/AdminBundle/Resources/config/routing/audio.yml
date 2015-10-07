@@ -1,0 +1,30 @@
+audio:
+    path:     /
+    defaults: { _controller: "AdminBundle:Audio:index" }
+
+audio_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Audio:show" }
+
+audio_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Audio:new" }
+
+audio_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Audio:create" }
+    methods:  POST
+
+audio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Audio:edit" }
+
+audio_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Audio:update" }
+    methods:  [POST, PUT]
+
+audio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Audio:delete" }
+    methods:  [POST, DELETE]

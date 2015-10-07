@@ -1,0 +1,152 @@
+{% extends "::base.html.twig" %}
+
+
+
+{% block contenu %}
+
+ <!--Contenu principal @media>1200px-->
+            <div class="row visible-lg">
+
+                <div class="panel panel-default col-sm-4 col-md-4">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Écrits politiques et autres essais</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                    	{% for c1 in cat1 %}
+                        <div>
+                            <p><small>{{c1.auteur | raw}} - {{c1.titre | raw}} </small></p>
+    				        <audio controls preload ='none'>
+    				          <source src={{ asset('audio/'~ c1.source) }} type="audio/mpeg" />        
+    				        </audio>
+                        </div>
+                        <small>par {{c1.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>                           
+                </div>
+
+
+                 <div class="panel panel-default col-sm-4 col-md-4">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Récits et romans </h3>
+                    </div>
+
+                    <div class="panel-body panel-body-custom">
+                        {% for c2 in cat2 %}
+                        <div>
+                            <p><small>{{c2.auteur | raw}} - {{c2.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c2.source) }} type="audio/mpeg" />        
+                            </audio>
+                        </div>
+                        <small>par {{c2.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>
+                           
+                </div>
+                 <div class="panel panel-default col-sm-4 col-md-4">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Poésies</h3>
+                    </div>
+
+                    <div class="panel-body panel-body-custom">
+                        {% for c3 in cat3 %}
+                        <div>
+                            <p><small>{{c3.auteur | raw}} - {{c3.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c3.source) }} type="audio/mpeg" />        
+                            </audio>
+                        </div>
+                        <small>par {{c3.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>
+                           
+                </div>  
+                <hr>
+            </div> 
+            <!--fin contenu principal @media>1200px-->
+
+            <!--Contenu principal @media >768 && <1200 px-->
+            <div class="row visible-md visible-sm">
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Écrits politiques et autres essais</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                        {% for c1 in cat1 %}
+                        <div>
+                            <p><small>{{c1.auteur | raw}} - {{c1.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c1.source) }} type="audio/mpeg" />        
+                            </audio>
+                        </div>
+                        <small>par {{c1.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>                          
+                </div>
+
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Récits et romans</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                        {% for c2 in cat2 %}
+                        <div>
+                            <p><small>{{c2.auteur | raw}} - {{c2.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c2.source) }} type="audio/mpeg"  />        
+                            </audio>
+                        </div>
+                        <small>par {{c2.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %}
+                    </div>                          
+                </div>
+                <hr> 
+            </div> 
+            <!--fin contenu principal @media >768 && <1200 px-->
+
+             <!--Contenu principal @media <768 px-->
+            <div class="row visible-xs">
+                 <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Écrits politiques et autres essais</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                        {% for c1 in cat1 %}
+                        <div>
+                            <p><small>{{c1.auteur | raw}} - {{c1.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c1.source) }} type="audio/mpeg" />        
+                            </audio>
+                        </div>
+                        <small>par {{c1.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>                          
+                </div>
+
+                <div class="panel panel-default col-sm-6 col-md-6">
+                    <div class="panel-heading panel-heading-custom">
+                        <h3 class="panel-title">Récits et romans</h3>
+                    </div>
+                    <div class="panel-body panel-body-custom">
+                        {% for c2 in cat2 %}
+                        <div>
+                            <p><small>{{c2.auteur | raw}} - {{c2.titre | raw}} </small></p>
+                            <audio controls preload ='none'>
+                              <source src={{ asset('audio/'~ c2.source) }} type="audio/mpeg" />        
+                            </audio>
+                        </div>
+                        <small>par {{c2.lecteur | raw}}</small>
+                        <hr>
+				        {% endfor %} 
+                    </div>                          
+                </div>
+                <hr>
+            </div>
+            <!--fin contenu principal @media <768-->
+{% endblock %}

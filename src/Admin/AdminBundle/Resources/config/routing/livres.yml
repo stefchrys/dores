@@ -1,0 +1,30 @@
+livres:
+    path:     /
+    defaults: { _controller: "AdminBundle:Livres:index" }
+
+livres_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:Livres:show" }
+
+livres_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:Livres:new" }
+
+livres_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:Livres:create" }
+    methods:  POST
+
+livres_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:Livres:edit" }
+
+livres_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:Livres:update" }
+    methods:  [POST, PUT]
+
+livres_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:Livres:delete" }
+    methods:  [POST, DELETE]

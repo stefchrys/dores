@@ -1,0 +1,61 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu %}
+    <h1><strong>BIBLIOTHEQUE</strong></h1>
+    <div class="panel panel-success"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Elément </h3> 
+    </div> 
+    <table class="table table-striped">
+        <tbody>
+             
+            <tr>
+                <th>Auteur</th>
+                <td>{{ entity.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Sous-Titre</th>
+                <td>{{ entity.sousTitre }}</td>
+            </tr>
+            <tr>
+                <th>Collection</th>
+                <td>{{ entity.collection }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ entity.prix }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ entity.image }}</td>
+            </tr>
+             <tr>
+                <th>Synopsis</th>
+                <td>{{ entity.synopsis }}</td>
+            </tr>
+             <tr>
+                <th>Footer</th>
+                <td>{{ entity.footer }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <tr>
+            <td>{{ form(delete_form) }}</td>
+            <td>
+                <a href="{{ path('livres_edit', { 'id': entity.id }) }}" role="button" class="btn btn-warning">MODIFIER</a>
+            </td>
+            <td><a href="{{ path('livres') }}" role="button" class= "btn btn-success"> ACCUEIL BIBLIOTHEQUE</a></td>
+            <td><a href="{{ path('admin_homepage') }}" role="button" class="btn btn-primary">ACCUEIL ADMIN</a> </td>            
+        </tr>
+    </table>
+   
+    
+
+</div>
+{% endblock %}

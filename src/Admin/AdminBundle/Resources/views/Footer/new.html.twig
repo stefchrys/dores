@@ -1,0 +1,34 @@
+{% extends '::admin.html.twig' %}
+
+{% block contenu%}
+    <h1>
+    	<button type="button" class="btn btn-default "><a href="{{ path('admin_homepage') }}">ACCUEIL ADMIN</a> </button>
+    	<button class= "btn btn-default"><a href="{{ path('footer') }}" > ACCUEIL FOOTER</a></button>
+    	Créer nouvelle ligne footer
+    </h1>
+    <div class="panel panel-success"> 
+	    <div class="panel-heading"> 
+	      <h3 class="panel-title">New element</h3> 
+	   	</div>
+	</div>
+
+
+    {{form_start(form,{ 'attr': {'role': 'form'} })}} 
+
+    <div class="form-group has-success">
+    <label for="pw">Contact</label>
+    {{ form_widget(form.contact,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    <div class="form-group has-success">
+    <label for="pw">Diffusion</label>
+    {{ form_widget(form.diffusion,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
+    
+
+    {{form_end(form)}}
+
+
+
+{% endblock %}
