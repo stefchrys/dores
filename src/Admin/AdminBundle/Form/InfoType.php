@@ -16,7 +16,9 @@ class InfoType extends AbstractType
     {
         $builder
             ->add('code')
-            ->add('categorie')
+            ->add('categorie','choice',array(
+                'choices' => array('cat1' => 'cat1', 'cat2' => 'cat2', 'cat3' =>'cat3')
+                ))
         ;
     }
     
