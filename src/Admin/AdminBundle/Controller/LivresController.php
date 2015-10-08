@@ -56,7 +56,7 @@ class LivresController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('livres_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('livres', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Livres:new.html.twig', array(
