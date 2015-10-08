@@ -43,20 +43,21 @@ class SliderController extends Controller
         $form->handleRequest($request);
 
        if ($form->isValid()) {
-             //ajoute audio physique
-            $file = $form->get('source')->getNormData();                
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';
-            $file->move($imagesDir, $fileName);
-            $entity->setSource($fileName);
-            $entity->setSourceName($fileName);
-
+             //ajoute image physique
+            $file = $form->get('source')->getNormData(); 
+            if($file != null) {               
+                $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';
+                $file->move($imagesDir, $fileName);
+                $entity->setSource($fileName);
+                $entity->setSourceName($fileName);
+            }
             //persist
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('slider_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('slider', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Slider:new.html.twig', array(
@@ -176,8 +177,8 @@ class SliderController extends Controller
     public function updateAction(Request $request, $id)
     {
         
+       //recuperation de entity dans bdd
         $em = $this->getDoctrine()->getManager();
-
         $entity = $em->getRepository('AdminBundle:Slider')->find($id);
 
         if (!$entity) {
@@ -186,23 +187,36 @@ class SliderController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
-         //efface ancien fichier
-            $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';               
-            $oldFileName = $em->getRepository('AdminBundle:Slider')->getFileNames($id);
-            $old=$oldFileName[0]->getSourceName();                
-            unlink($imagesDir.'/'.$old);
+
+
         $editForm->handleRequest($request);
 
-       if ($editForm->isValid()) {
-           
-
-            if ($editForm->isSubmitted()) {
-                $file = $editForm->get('source')->getData();
+        if ($editForm->isValid()) {
                 
-                $fileName = md5(uniqid()).'.'.$file->guessExtension();
-                $file->move($imagesDir, $fileName);
-                $entity->setSource($fileName);
-                $entity->setSourceName($fileName);
+            if ($editForm->isSubmitted()) {
+                
+                //recup nom image avant modif
+                $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';               
+                $oldFileName = $em->getRepository('AdminBundle:Slider')->getFileNames($id);
+                $old=$oldFileName[0]->getSourceName();                
+                
+
+                $file = $editForm->get('source')->getData();
+
+                if($file != null){
+                    if($old !=null){
+                        unlink($imagesDir.'/'.$old);
+                    }                   
+                    $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                    $file->move($imagesDir, $fileName);
+                    $entity->setSource($fileName);
+                    $entity->setSourceName($fileName);
+                }else{
+                    $entity->setSource($old);
+                }
+                
+               
+                
             }
             $em->flush();    
     
@@ -225,18 +239,22 @@ class SliderController extends Controller
         $form = $this->createDeleteForm($id);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $entity = $em->getRepository('AdminBundle:Slider')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Slider entity.');
             }
-             //efface slider physique
+
+            //efface audio physique
             $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';               
             $oldFileName = $em->getRepository('AdminBundle:Slider')->getFileNames($id);
             $old=$oldFileName[0]->getSourceName();                
-            unlink($imagesDir.'/'.$old);
+            if($old !=null){
+                unlink($imagesDir.'/'.$old);
+            } 
+            //efface entity
             $em->remove($entity);
             $em->flush();
         }
