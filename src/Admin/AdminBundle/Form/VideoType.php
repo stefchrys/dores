@@ -18,7 +18,9 @@ class VideoType extends AbstractType
             ->add('auteur')
             ->add('titre')
             ->add('source','file', array('data_class' => null,'required' => false))
-            ->add('categorie')
+            ->add('categorie','choice',array(
+                'choices' => array('cat1' => 'cat1', 'cat2' => 'cat2', 'cat3' =>'cat3')
+                ))
         ;
     }
     
