@@ -46,8 +46,7 @@ class DefaultController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
-        
-                
+                       
         return $this->render('FrontBundle:Default:index.html.twig',$arr);
     }
 }
