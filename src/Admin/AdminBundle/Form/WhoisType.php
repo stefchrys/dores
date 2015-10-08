@@ -16,8 +16,7 @@ class WhoisType extends AbstractType
     {
         $builder
             ->add('row1')
-            ->add('row2')
-            ->add('row3')
+            
         ;
     }
     
