@@ -44,7 +44,7 @@ class AgendaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('agenda_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('agenda', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Agenda:new.html.twig', array(
