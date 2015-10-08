@@ -19,8 +19,12 @@ class LivresType extends AbstractType
             ->add('auteur')
             ->add('titre')
             ->add('sousTitre')
-            ->add('collection')
-            ->add('categorie')
+            ->add('collection','choice',array(
+                'choices' => array('XIX' => 'XIX', 'Litterature' => 'Littérature', 'Essais' =>'Essais')
+                ))
+            ->add('categorie','choice',array(
+                'choices' => array('Roman' => 'Roman', 'Theatre' => 'Théatre', 'Poesie' =>'Poésie')
+                ))
             ->add('prix')
             ->add('image','file', array('data_class' => null,'required' => false))
             ->add('synopsis')
