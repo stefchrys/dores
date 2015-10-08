@@ -7,9 +7,13 @@
     <div class="panel-heading"> 
       <h3 class="panel-title">Liste des éléments</h3> 
    </div>
-<div id="accordeon" >
-    {% for entity in entities %}     
-        <h3><a href="#">{{ entity.titre }}</a></h3>
+<div id="accordeon"  >
+    {% for entity in entities %}  
+        {% if entity.premiere == 1%}   
+        <h1 id="auteur1"><a href="#" >{{ entity.titre }}</a></h1>
+        {% else %}
+        <h3><a href="#" >{{ entity.titre }}</a></h3>
+        {% endif %}
         <div>
             <table class="table table-striped">
             <thead>
