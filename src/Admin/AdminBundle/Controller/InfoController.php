@@ -45,7 +45,7 @@ class InfoController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('info_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('info', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Info:new.html.twig', array(
