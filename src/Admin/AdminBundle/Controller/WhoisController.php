@@ -44,7 +44,7 @@ class WhoisController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('whois_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('whois', array('id' => $entity->getId())));
         }
 
         return $this->render('AdminBundle:Whois:new.html.twig', array(
