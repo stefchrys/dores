@@ -15,6 +15,10 @@ class Base
 
 	private function getDatas($el){
 
+        if($el == 'AdminBundle:Agenda' ){
+            $entities = $this->em->getRepository($el)->findBy(array(),array('id'=>'desc')); 
+            return $entities;  
+        }
         $entities = $this->em->getRepository($el)->findAll();
 
         return $entities;
