@@ -31,6 +31,8 @@ class Base
         $agendas  = $this->getDatas('AdminBundle:Agenda');
     	$sliders  = $this->getDatas('AdminBundle:Slider');
 
+
+        
     	return array(
 
     		'sliders'  => $sliders,

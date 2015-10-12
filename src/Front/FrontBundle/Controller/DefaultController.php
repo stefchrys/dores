@@ -2,6 +2,9 @@
 
 namespace Front\FrontBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Front\FrontBundle\Entity\Newsletter;
+use Front\FrontBundle\Form\NewsletterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -27,10 +30,29 @@ class DefaultController extends Controller
 
     
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        
-        
+        //mini formulaire d'abonnement
+        $news = new Newsletter();
+        $form = $this->createFormBuilder($news)
+        ->add('news','text')
+        ->add('Envoyer', 'submit')
+        ->getForm();
+        $form->handleRequest($request);         
+        if ($form->isValid()) {
+                $email = $news->getNews();
+                if (strpos($email, '@') !== FALSE && strpos($email, '.') !== FALSE) {
+                    $message = \Swift_Message::newInstance() 
+                    ->setSubject('Bonjour') 
+                    ->setFrom($email) 
+                    ->setTo('stefchrys@yahoo.fr') 
+                    ->setBody('Bonjour Fabrice cet email : '.$email.' souhaite un abonnement à votre newsletter, cordialement') 
+                    ; 
+                    $this->get('mailer')->send($message);
+                    return $this->redirect($this->generateUrl('front_homepage'));
+                }                                   
+            }
+                     
         $premiere = $this->getPremiereDatas('AdminBundle:Livres');
        
         $contenus = $this->getDatas('AdminBundle:Accueil');
@@ -46,7 +68,7 @@ class DefaultController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
-                       
+        $arr['newsletter'] = $form->createView();             
         return $this->render('FrontBundle:Default:index.html.twig',$arr);
     }
 }

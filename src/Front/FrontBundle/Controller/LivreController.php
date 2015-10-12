@@ -13,6 +13,8 @@ class LivreController extends Controller
 
     public function indexAction($id, Request $request)
     {
+       
+
     	$livre = $this->getDoctrine()
     	->getRepository('AdminBundle:Livres')
     	->find($id);	    	
@@ -25,7 +27,7 @@ class LivreController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
-       
+        
         
        
         return $this->render('FrontBundle:Livre:index.html.twig',$arr);

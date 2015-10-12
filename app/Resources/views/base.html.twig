@@ -145,17 +145,19 @@
                 <div class="thumbnail">
                     <div class="caption" id="gris">
                         <h3 id="titre1">S'abonner à la lettre d'information</h3>
-                        <form class="form-inline" role="form"> 
-                            <div class="form-group"> 
-                                <label class="sr-only" for="email">Email</label> 
-                                <input type="email" class="form-control" id="email" placeholder="Votre E-mail"> 
+                        <!--<form class="form-inline" role="form"> -->
+                        {{ form_start(newsletter,{'attr': {'class': 'form-inline'}}) }} 
+                            <div class="form-group">  
+                                 {{ form_widget(newsletter.news,{'attr': {'placeholder': 'Votre Email','class':'form-control'}}) }}
                             </div> 
-                            <button type="submit" class="btn btn-default">Envoyer</button>                                                                                   
-                        </form>  
+                            {{ form_widget(newsletter.Envoyer,{'attr': {'class': 'btn btn-default'}}) }}
+                        {{ form_end(newsletter) }}       
+                        
                     </div>
                 </div>
             </div>                   
         </div>
+        
         {% endblock %}
 
         {% block footer %}
