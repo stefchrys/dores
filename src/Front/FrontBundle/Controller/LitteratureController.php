@@ -30,13 +30,13 @@ class LitteratureController extends Controller
         //mini formulaire d'abonnement
         $news = new Newsletter();
         $form = $this->createFormBuilder($news)
-        ->add('news','text')
+        ->add('news','email')
         ->add('Envoyer', 'submit')
         ->getForm();
         $form->handleRequest($request);         
         if ($form->isValid()) {
                 $email = $news->getNews();
-                if (strpos($email, '@') !== FALSE && strpos($email, '.') !== FALSE) {
+               
                     $message = \Swift_Message::newInstance() 
                     ->setSubject('Bonjour') 
                     ->setFrom($email) 
@@ -45,7 +45,7 @@ class LitteratureController extends Controller
                     ; 
                     $this->get('mailer')->send($message);
                     return $this->redirect($this->generateUrl('front_homepage'));
-                }                                   
+                                                 
             }
 
         //$litteratures = $this->getCat('litterature');

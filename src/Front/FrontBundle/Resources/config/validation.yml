@@ -1,0 +1,8 @@
+# src/Front/FrontBundle/Ressources/config/validation.yml
+Front\FrontBundle\Entity\Newsletter:
+    properties:
+        news:
+            - Email:
+                message: The email "{{value}}" is not a valid email.
+                checkMX: true
+                checkHost: true
