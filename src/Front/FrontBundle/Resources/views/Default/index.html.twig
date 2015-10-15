@@ -97,10 +97,11 @@
                                      {% endif %}
                                 </div>
                             </div>
-                        </div><br>
-                </div>
+                    </div><br>
+                
                 {% endfor %}
                 {% for i in 0..0 %}
+                
                 <div class="thumbnail"> 
                     <div class="caption" id="gris">
                             {% if premiere[i] is defined %}
@@ -112,8 +113,9 @@
                             </a>
                             <p> {{premiere[i].preface | raw}} </p>
                             {% endif %}                             
-                        </div>
+                    </div>
                 </div> 
+                </div>
                 {% endfor %}
                 
 
