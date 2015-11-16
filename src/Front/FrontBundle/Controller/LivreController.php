@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Front\FrontBundle\Entity\Enquiry;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class LivreController extends Controller
@@ -49,8 +50,13 @@ class LivreController extends Controller
         $arr['nav_info'] = ' ';
         $arr['newsletter'] = $form->createView();
         
-       
-        return $this->render('FrontBundle:Livre:index.html.twig',$arr);
+        $response = new Response();
+        if ($this->getRequest()->isMethod('GET')) {
+            $response->setPublic();
+            $response->setSharedMaxAge(3);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        }
+        return $this->render('FrontBundle:Livre:index.html.twig',$arr,$response);
     }
 
 }

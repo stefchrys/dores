@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
 use Front\FrontBundle\Form\NewsletterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response; 
 
 class DefaultController extends Controller
 {
@@ -68,7 +69,15 @@ class DefaultController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
-        $arr['newsletter'] = $form->createView();             
-        return $this->render('FrontBundle:Default:index.html.twig',$arr);
+        $arr['newsletter'] = $form->createView();  
+        $response = new Response();
+        if ($this->getRequest()->isMethod('GET')) {
+            $response->setPublic();
+            $response->setSharedMaxAge(600);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        }
+
+      
+        return $this->render('FrontBundle:Default:index.html.twig',$arr,$response);
     }
 }

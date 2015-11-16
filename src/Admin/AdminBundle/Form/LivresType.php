@@ -18,12 +18,12 @@ class LivresType extends AbstractType
             ->add('premiere','checkbox',array('required' => false))
             ->add('auteur')
             ->add('titre')
-            ->add('sousTitre')
+            ->add('sousTitre','textarea')
             ->add('collection','choice',array(
                 'choices' => array('XIX' => 'XIX', 'Litterature' => 'Littérature', 'Essais' =>'Essais')
                 ))
             ->add('categorie','choice',array(
-                'choices' => array('Roman' => 'Roman', 'Theatre' => 'Théatre', 'Poesie' =>'Poésie')
+                'choices' => array('Roman' => 'Roman', 'Theatre' => 'Théatre', 'Poesie' =>'Poésie','null'=>null)
                 ))
             ->add('prix')
             ->add('image','file', array('data_class' => null,'required' => false))

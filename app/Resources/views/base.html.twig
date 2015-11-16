@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>&Eacuteditions dores et déjà</title>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+         <link href="{{ asset('dist/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('dist/css/bootstrap-theme.min.css') }}" type="text/css" rel="stylesheet" />
+            <link href="{{ asset('plus/css/style.css') }}" type="text/css" rel="stylesheet" />      
+        {% endblock %}
         <![endif]-->
         <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -12,7 +17,7 @@
             <script src="{{ asset('plus/js/respond.min.js') }}"  ></script>
         <![endif]-->
     </head>
-
+    
 
     <!--
 
@@ -47,7 +52,7 @@
         {% block body %}
         {% endblock %}
         {% block nav %}
-            <div class="row nav-perso ">
+            <div class="row nav-perso ">                
                 <p><img src={{asset("img/visuell.jpg")}} alt="Editions Dores et déjà" class="img-responsive hidden-xs"></p>
                 <nav class="navbar navbar-default" role="navigation">
                     <!-- Barre de navigation pour mobile -->
@@ -182,15 +187,10 @@
 
         </div><!--fin container-->
 
-        {% block stylesheets %}
-            <link href="{{ asset('dist/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
-            <link href="{{ asset('dist/css/bootstrap-theme.min.css') }}" type="text/css" rel="stylesheet" />
-            <link href="{{ asset('plus/css/style.css') }}" type="text/css" rel="stylesheet" />   
-        {% endblock %}
+        
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-2.1.4.min.js"  ></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-                   
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>                   
         {% endblock %}
           
 

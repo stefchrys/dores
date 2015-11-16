@@ -1,9 +1,6 @@
 <?php
-
 namespace Front\FrontBundle\Entity;
-
 use Doctrine\ORM\EntityRepository;
-
 /**
  * NewsletterRepository
  *

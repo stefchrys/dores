@@ -1,9 +1,6 @@
 <?php
-
 namespace Front\FrontBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Newsletter
  *
@@ -20,15 +17,12 @@ class Newsletter
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="news", type="string", length=255)
      */
     private $news;
-
-
     /**
      * Get id
      *
@@ -38,7 +32,6 @@ class Newsletter
     {
         return $this->id;
     }
-
     /**
      * Set news
      *
@@ -48,10 +41,8 @@ class Newsletter
     public function setNews($news)
     {
         $this->news = $news;
-
         return $this;
     }
-
     /**
      * Get news
      *

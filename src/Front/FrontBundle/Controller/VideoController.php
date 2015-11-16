@@ -5,6 +5,7 @@ namespace Front\FrontBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class VideoController extends Controller
 {
@@ -60,7 +61,15 @@ class VideoController extends Controller
         $arr['nav_video'] = 'active';
         $arr['nav_info'] = ' ';
          $arr['newsletter'] = $form->createView();
-        return $this->render('FrontBundle:Video:index.html.twig',$arr);
+
+          $response = new Response();
+        if ($this->getRequest()->isMethod('GET')) {
+            $response->setPublic();
+            $response->setSharedMaxAge(3);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        }
+
+                return $this->render('FrontBundle:Video:index.html.twig',$arr,$response);
     }
 
 }

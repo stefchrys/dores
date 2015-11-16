@@ -5,6 +5,7 @@ namespace Front\FrontBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class InfoController extends Controller
 {
@@ -60,7 +61,14 @@ class InfoController extends Controller
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = 'active';
          $arr['newsletter'] = $form->createView();
-        return $this->render('FrontBundle:Info:index.html.twig',$arr);
+          $response = new Response();
+        
+            $response->setPublic();
+            $response->setSharedMaxAge(1);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        
+         
+        return $this->render('FrontBundle:Info:index.html.twig',$arr,$response);
     }
 
 }

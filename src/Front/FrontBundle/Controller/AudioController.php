@@ -5,6 +5,7 @@ namespace Front\FrontBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class AudioController extends Controller
 {
@@ -21,7 +22,7 @@ class AudioController extends Controller
     public function indexAction(Request $request)
     {
 
-        //mini formulaire d'abonnement
+        //mini formulaire d'abonnement.
         $news = new Newsletter();
         $form = $this->createFormBuilder($news)
         ->add('news','email')
@@ -61,7 +62,14 @@ class AudioController extends Controller
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
          $arr['newsletter'] = $form->createView();
-        return $this->render('FrontBundle:Audio:index.html.twig',$arr);
+         $response = new Response();
+        if ($this->getRequest()->isMethod('GET')) {
+            $response->setPublic();
+            $response->setSharedMaxAge(1);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        }
+          
+        return $this->render('FrontBundle:Audio:index.html.twig',$arr,$response);
     }
 
 }

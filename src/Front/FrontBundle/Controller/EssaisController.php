@@ -5,6 +5,7 @@ namespace Front\FrontBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class EssaisController extends Controller
 {
@@ -56,8 +57,15 @@ class EssaisController extends Controller
         $arr['nav_info'] = ' ';
         
          $arr['newsletter'] = $form->createView();
+             $response = new Response();
+        if ($this->getRequest()->isMethod('GET')) {
+            $response->setPublic();
+            $response->setSharedMaxAge(1);
+            $response->setVary(array('Accept-Encoding', 'User-Agent'));
+        }
        
-        return $this->render('FrontBundle:Essais:index.html.twig',$arr);
+       
+        return $this->render('FrontBundle:Essais:index.html.twig',$arr,$response);
     }
 
 }

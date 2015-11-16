@@ -70,7 +70,7 @@ class Livres
     /**
      * @var string
      *
-     * @ORM\Column(name="sousTitre", type="string", length=255 ,nullable=true)
+     * @ORM\Column(name="sousTitre", type="text", nullable=true)
      */
     private $sousTitre;
 
