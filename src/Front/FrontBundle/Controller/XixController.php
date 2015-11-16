@@ -41,7 +41,7 @@ class XixController extends Controller
                                                   
             }
 
-    	$xix = $this->getCat('xix');
+    	$xix = $this->getCat('XIX eme');
     	
 
     	$arr = $this->get('front.base.service')->recupInfo();
