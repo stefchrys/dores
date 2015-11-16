@@ -20,7 +20,7 @@ class LivresType extends AbstractType
             ->add('titre')
             ->add('sousTitre','textarea')
             ->add('collection','choice',array(
-                'choices' => array('XIX' => 'XIX', 'Litterature' => 'Littérature', 'Essais' =>'Essais')
+                'choices' => array('XIXeme' => 'XIXeme', 'Litterature' => 'Littérature', 'Essais' =>'Essais')
                 ))
             ->add('categorie','choice',array(
                 'choices' => array('Roman' => 'Roman', 'Theatre' => 'Théatre', 'Poesie' =>'Poésie','null'=>null)
