@@ -59,6 +59,14 @@ class Livres
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="paypal", type="string", length=255 ,nullable=true)
+     */
+    private $paypal;
+    
 
     /**
      * @var string
@@ -370,5 +378,28 @@ class Livres
     public function getPreface()
     {
         return $this->preface;
+    }
+
+    /**
+     * Set paypal
+     *
+     * @param string $paypal
+     * @return Livres
+     */
+    public function setPaypal($paypal)
+    {
+        $this->paypal = $paypal;
+
+        return $this;
+    }
+
+    /**
+     * Get paypal
+     *
+     * @return string 
+     */
+    public function getPaypal()
+    {
+        return $this->paypal;
     }
 }

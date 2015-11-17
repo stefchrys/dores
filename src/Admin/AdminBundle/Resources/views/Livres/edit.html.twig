@@ -67,6 +67,11 @@
     {{ form_widget(edit_form.footer,{ 'attr': {'class': 'form-control'} } ) }} 
     </div>
 
+    <div class="form-group has-success">
+    <label for="pw">Paypal</label>
+    {{ form_widget(edit_form.paypal,{ 'attr': {'class': 'form-control'} } ) }} 
+    </div>
+
     <table>
         <tr>
             <td>{{form_end(edit_form)}}</td>

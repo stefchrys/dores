@@ -14,7 +14,7 @@
                     	<img src="{{ asset('img/collection/' ~ livre.image) }}">
                     </br></br>
                     	<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="{{livre.paypal}}">
 							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
 							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 						</form>
@@ -50,7 +50,7 @@
                     	<img src="{{ asset('img/collection/' ~ livre.image) }}">
                     </br></br>
                     	<form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="{{livre.paypal}}">
 							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
 							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 						</form>
@@ -90,7 +90,7 @@
                         {{livre.footer | raw}}
 
                         <form class="center" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="MNRBDMSPGFU8C">
+							<input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="{{livre.paypal}}">
 							<input type="image" <input="" src="https://www.paypal.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus s?curis?e !">
 							<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 						</form> 

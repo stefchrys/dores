@@ -30,6 +30,7 @@ class LivresType extends AbstractType
             ->add('synopsis')
             ->add('preface')
             ->add('footer')
+	    ->add('paypal')
         ;
     }
     
