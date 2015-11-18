@@ -6,9 +6,9 @@ front_audio:
     path:     /audio/
     defaults: { _controller: FrontBundle:Audio:index }
 
-front_video:
-    path:     /video/
-    defaults: { _controller: FrontBundle:Video:index }
+#front_video:
+#    path:     /video/
+#    defaults: { _controller: FrontBundle:Video:index }
 
 front_info:
     path:     /info/
