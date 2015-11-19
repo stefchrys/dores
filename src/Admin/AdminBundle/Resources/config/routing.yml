@@ -1,3 +1,7 @@
+admin_admin:
+    resource: "@AdminBundle/Resources/config/routing/doc.yml"
+    prefix:   /admin
+
 #DEPART
 admin_homepage:
     path:     /
@@ -47,3 +51,8 @@ admin_footer:
 admin_info:
     resource: "@AdminBundle/Resources/config/routing/info.yml"
     prefix:   /info
+
+#DOC
+admin_doc:
+    resource: "@AdminBundle/Resources/config/routing/doc.yml"
+    prefix:   /doc
