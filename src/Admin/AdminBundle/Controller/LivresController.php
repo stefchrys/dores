@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Admin\AdminBundle\Entity\Livres;
 use Admin\AdminBundle\Form\LivresType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
 /**
  * Livres controller.
  *
@@ -23,7 +23,6 @@ class LivresController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        //$entities = $em->getRepository('AdminBundle:Livres')->findAll();
         $entities = $em->getRepository('AdminBundle:Livres')->findBy(array(),array('titre'=>'asc'));
 
         return $this->render('AdminBundle:Livres:index.html.twig', array(

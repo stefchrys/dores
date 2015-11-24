@@ -48,7 +48,6 @@ class LivresRepository extends EntityRepository
             WHERE A.premiere = true')
             ->setMaxResults(2);
 
-        //$query->setParameter('premiere', $premiere);
         try{
             return $query->getResult();
         }

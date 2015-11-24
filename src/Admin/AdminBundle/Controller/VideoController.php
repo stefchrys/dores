@@ -22,8 +22,6 @@ class VideoController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        //$entities = $em->getRepository('AdminBundle:Video')->findAll();
         $entities = $em->getRepository('AdminBundle:Video')->findBy(array(),array('categorie'=>'asc'));
 
         return $this->render('AdminBundle:Video:index.html.twig', array(

@@ -22,8 +22,6 @@ class InfoController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        //$entities = $em->getRepository('AdminBundle:Info')->findAll();
         $entities = $em->getRepository('AdminBundle:Info')->findBy(array(),array('categorie'=>'asc'));
 
         return $this->render('AdminBundle:Info:index.html.twig', array(

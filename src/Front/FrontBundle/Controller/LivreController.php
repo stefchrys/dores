@@ -3,7 +3,7 @@
 namespace Front\FrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Front\FrontBundle\Entity\Enquiry;
+
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

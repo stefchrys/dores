@@ -49,14 +49,13 @@ class LitteratureController extends Controller
                                                  
             }
 
-        //$litteratures = $this->getCat('litterature');
         $littRoman = $this->getTwoDatas('roman');
         $littTheatre = $this->getTwoDatas('theatre');
         $littPoesie = $this->getTwoDatas('poesie');
 
         $arr = $this->get('front.base.service')->recupInfo();
 
-        //$arr['litteratures'] = $litteratures;
+        
 
         $arr['roman'] = $littRoman;
         $arr['theatre'] = $littTheatre;

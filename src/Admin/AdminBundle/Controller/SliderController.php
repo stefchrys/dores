@@ -23,8 +23,6 @@ class SliderController extends Controller
     {
         
         $em = $this->getDoctrine()->getManager();
-
-        //$entities = $em->getRepository('AdminBundle:Slider')->findAll();
         $entities = $em->getRepository('AdminBundle:Slider')->findBy(array(),array('source'=>'asc'));
 
         return $this->render('AdminBundle:Slider:index.html.twig', array(

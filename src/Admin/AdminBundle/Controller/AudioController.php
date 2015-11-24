@@ -22,8 +22,6 @@ class AudioController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        //$entities = $em->getRepository('AdminBundle:Audio')->findAll();
         $entities = $em->getRepository('AdminBundle:Audio')->findBy(array(),array('categorie'=>'asc'));
 
         return $this->render('AdminBundle:Audio:index.html.twig', array(

@@ -4,7 +4,7 @@ namespace Front\FrontBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Front\FrontBundle\Entity\Newsletter;
-use Front\FrontBundle\Form\NewsletterType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response; 
 
