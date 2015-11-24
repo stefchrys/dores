@@ -45,7 +45,7 @@ class SliderController extends Controller
        if ($form->isValid()) {
              //ajoute image physique
             $file = $form->get('source')->getNormData(); 
-            if($file != null) {               
+            if(null !== $file) {               
                 $fileName = md5(uniqid()).'.'.$file->guessExtension();
                 $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';
                 $file->move($imagesDir, $fileName);
@@ -203,8 +203,8 @@ class SliderController extends Controller
 
                 $file = $editForm->get('source')->getData();
 
-                if($file != null){
-                    if($old !=null){
+                if(null !== $file){
+                    if(null !== $old){
                         unlink($imagesDir.'/'.$old);
                     }                   
                     $fileName = md5(uniqid()).'.'.$file->guessExtension();
@@ -251,7 +251,7 @@ class SliderController extends Controller
             $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/slider';               
             $oldFileName = $em->getRepository('AdminBundle:Slider')->getFileNames($id);
             $old=$oldFileName[0]->getSourceName();                
-            if($old !=null){
+            if(null !== $old){
                 unlink($imagesDir.'/'.$old);
             } 
             //efface entity

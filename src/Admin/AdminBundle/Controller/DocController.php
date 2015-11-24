@@ -44,7 +44,7 @@ class DocController extends Controller
             $file = $form->get('image')->getNormData();
             $name = $entity->getImageName();
             $id = $entity->getId();
-            if($file != null) {               
+            if(null !== $file) {               
                 $fileName =$name.'_'.uniqid().'.'.$file->guessExtension();
                 $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/autres';
                 $file->move($imagesDir, $fileName);
@@ -197,8 +197,8 @@ class DocController extends Controller
 
                 $file = $editForm->get('image')->getData();
 
-                if($file != null){
-                    if($old !=null){
+                if(null !== $file){
+                    if(null !== $old){
                         unlink($imagesDir.'/'.$old);
                     }                   
                     $fileName = $name.'_'.uniqid().'.'.$file->guessExtension();
@@ -244,7 +244,7 @@ class DocController extends Controller
             $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/autres';               
             $oldFileName = $em->getRepository('AdminBundle:Doc')->getFileNames($id);
             $old=$oldFileName[0]->getImageName();
-            if($old !=null){
+            if(null !== $old){
                 unlink($imagesDir.'/'.$old);
             }                
             

@@ -43,7 +43,7 @@ class AudioController extends Controller
         if ($form->isValid()) {
              //ajoute audio physique
             $file = $form->get('source')->getNormData(); 
-            if($file != null) {               
+            if(null !== $file ) {               
                 $fileName = md5(uniqid()).'.'.$file->guessExtension();
                 $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/audio';
                 $file->move($imagesDir, $fileName);
@@ -200,8 +200,8 @@ class AudioController extends Controller
 
                 $file = $editForm->get('source')->getData();
 
-                if($file != null){
-                    if($old !=null){
+                if(null !== $file ){
+                    if(null !== $old){
                         unlink($imagesDir.'/'.$old);
                     }                   
                     $fileName = md5(uniqid()).'.'.$file->guessExtension();
@@ -247,7 +247,7 @@ class AudioController extends Controller
             $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/audio';               
             $oldFileName = $em->getRepository('AdminBundle:Audio')->getFileNames($id);
             $old=$oldFileName[0]->getSourceName();                
-            if($old !=null){
+            if(null !== $old){
                 unlink($imagesDir.'/'.$old);
             } 
             //efface entity

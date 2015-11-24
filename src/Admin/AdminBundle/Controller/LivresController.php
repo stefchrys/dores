@@ -44,7 +44,7 @@ class LivresController extends Controller
 
             //ajoute image physique
             $file = $form->get('image')->getNormData();
-            if($file != null) {               
+            if(null !== $file ) {               
                 $fileName = md5(uniqid()).'.'.$file->guessExtension();
                 $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/collection';
                 $file->move($imagesDir, $fileName);
@@ -205,8 +205,8 @@ class LivresController extends Controller
 
                 $file = $editForm->get('image')->getData();
 
-                if($file != null){
-                    if($old !=null){
+                if(null !== $file){
+                    if(null !== $old){
                         unlink($imagesDir.'/'.$old);
                     }                   
                     $fileName = md5(uniqid()).'.'.$file->guessExtension();
@@ -251,7 +251,7 @@ class LivresController extends Controller
             $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/img/collection';               
             $oldFileName = $em->getRepository('AdminBundle:Livres')->getFileNames($id);
             $old=$oldFileName[0]->getImageName();
-            if($old !=null){
+            if(null !== $old){
                 unlink($imagesDir.'/'.$old);
             }                
             
