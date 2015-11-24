@@ -69,10 +69,10 @@
 
                     <div class="collapse navbar-collapse " id="navbarmobile">
                         <ul class="nav navbar-nav">
+		            <li class="{{nav_accueil}}"><a href="{{path('front_homepage')}}" >ACCUEIL</a></li>
                             <li class="{{nav_xix}}"><a href="{{path('front_xix')}}">XIX EME</a></li>
                             <li class="{{nav_essais}}"><a href="{{path('front_essais')}}">ESSAIS</a></li>
                             <li class="{{nav_litt}}"><a href="{{path('front_litterature')}}">LITTERATURE</a></li>
-                            <li class="{{nav_accueil}}"><a href="{{path('front_homepage')}}" >ACCUEIL</a></li>
                             <li class="{{nav_audio}}"><a href="{{path('front_audio')}}">AUDIO</a></li>
                             {# <li class="{{nav_video}}"><a href="{{path('front_video')}}">VIDEO</a></li> #}
                             <li class="{{nav_info}}"><a href="{{path('front_info')}}">INFO</a></li>
@@ -145,13 +145,12 @@
                 <div class="thumbnail">
                     <div class="caption" id="gris">
                         <h3 id="titre1">S'abonner à la lettre d'information</h3>
-                        <!--<form class="form-inline" role="form"> -->
-                        {{ form_start(newsletter,{'attr': {'class': 'form-inline'}}) }} 
+                        {{ form_start(newsletter,{'attr': {'class': 'form-inline','role': 'form'}}) }} 
                             <div class="form-group">  
                                  {{ form_widget(newsletter.news,{'attr': {'placeholder': 'Votre Email','class':'form-control'}}) }}
                             </div> 
                             {{ form_widget(newsletter.Envoyer,{'attr': {'class': 'btn btn-default'}}) }}
-                        {{ form_end(newsletter) }}       
+                        {{ form_end(newsletter) }}      
                         
                     </div>
                 </div>

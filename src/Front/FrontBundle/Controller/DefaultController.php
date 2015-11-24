@@ -35,12 +35,17 @@ class DefaultController extends Controller
     {
         //mini formulaire d'abonnement
         $news = new Newsletter();
+
         $form = $this->createFormBuilder($news)
         ->add('news','email')
         ->add('Envoyer', 'submit')
         ->getForm();
-        $form->handleRequest($request);         
+
+
+
+        $form->handleRequest($request);        
         if ($form->isValid()) {
+		
                 $email = $news->getNews();
                 
                     $message = \Swift_Message::newInstance() 
@@ -51,6 +56,7 @@ class DefaultController extends Controller
                     ; 
                     $this->get('mailer')->send($message);
                     return $this->redirect($this->generateUrl('front_homepage'));
+			
                                                    
             }
                      
@@ -69,7 +75,7 @@ class DefaultController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
-        $arr['newsletter'] = $form->createView();  
+        $arr['newsletter'] = $form->createView(); 
         $response = new Response();
         if ($this->getRequest()->isMethod('GET')) {
             $response->setPublic();
@@ -79,5 +85,8 @@ class DefaultController extends Controller
 
       
         return $this->render('FrontBundle:Default:index.html.twig',$arr,$response);
+
+	
+	
     }
 }
