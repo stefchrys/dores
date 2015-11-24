@@ -43,7 +43,7 @@ class DocController extends Controller
             //ajoute image physique
             $file = $form->get('image')->getNormData();
             $name = $entity->getImageName();
-            $id = $entity->getId();
+            
             if(null !== $file) {               
                 $fileName =$name.'_'.uniqid().'.'.$file->guessExtension();
                 $imagesDir = $this->container->getParameter('kernel.root_dir').'/../web/autres';
