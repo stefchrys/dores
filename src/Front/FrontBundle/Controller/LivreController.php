@@ -3,7 +3,7 @@
 namespace Front\FrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Front\FrontBundle\Entity\Newsletter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,7 +38,13 @@ class LivreController extends Controller
 
     	$livre = $this->getDoctrine()
     	->getRepository('AdminBundle:Livres')
-    	->find($id);	    	
+    	->find($id);
+	
+	if(null === $livre){
+		throw new NotFoundHttpException('Sorry not existing!');
+	}
+	
+    	
     	$arr = $this->get('front.base.service')->recupInfo();
     	$arr['livre'] = $livre;        
         $arr['nav_accueil'] = ' ';

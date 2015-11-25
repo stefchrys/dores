@@ -29,3 +29,5 @@ front_litterature:
 front_livre:
     path:     /livre/{id}/
     defaults: { _controller: FrontBundle:Livre:index }
+    requirements:
+        id:    \d+
