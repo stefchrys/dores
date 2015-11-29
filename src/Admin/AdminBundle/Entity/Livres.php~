@@ -3,6 +3,7 @@
 namespace Admin\AdminBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Livres
@@ -12,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Livres
 {
+   /**
+   * @Gedmo\Slug(fields={"titre"})
+   * @ORM\Column(length=128, unique=true)
+   */
+   private $slug;
+
     /**
      * @var string 
      * @Assert\File(  mimeTypesMessage = "application/pdf")
@@ -378,5 +385,28 @@ class Livres
     public function getPreface()
     {
         return $this->preface;
+    }
+
+    /**
+     * Set paypal
+     *
+     * @param string $paypal
+     * @return Livres
+     */
+    public function setPaypal($paypal)
+    {
+        $this->paypal = $paypal;
+
+        return $this;
+    }
+
+    /**
+     * Get paypal
+     *
+     * @return string 
+     */
+    public function getPaypal()
+    {
+        return $this->paypal;
     }
 }

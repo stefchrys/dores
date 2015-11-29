@@ -27,7 +27,13 @@ front_litterature:
     defaults: { _controller: FrontBundle:Litterature:index }
 
 front_livre:
-    path:     /livre/{id}/
-    defaults: { _controller: FrontBundle:Livre:index }
-    requirements:
-        id:    \d+
+   path:     /livre/{id}/
+   defaults: { _controller: FrontBundle:Livre:index }
+   requirements:
+       id:    \d+
+
+#front_livre:
+#    path:     /livre/{slug}/
+#    defaults: { _controller: FrontBundle:Livre:index }
+#    requirements:
+#        slug: "[a-zA-Z0-9-_/]+"

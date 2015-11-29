@@ -4,6 +4,7 @@ namespace Admin\AdminBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Livres
  *
@@ -12,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Livres
 {
+   
+
     /**
      * @var string 
      * @Assert\File(  mimeTypesMessage = "application/pdf")
@@ -402,4 +405,6 @@ class Livres
     {
         return $this->paypal;
     }
+
+    
 }
