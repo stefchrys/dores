@@ -77,7 +77,7 @@ class DefaultController extends Controller
         $arr['nav_info'] = ' ';
         $arr['newsletter'] = $form->createView(); 
         $response = new Response();
-        if ($this->getRequest()->isMethod('GET')) {
+        if ($request->isMethod('GET')) {
             $response->setPublic();
             $response->setSharedMaxAge(600);
             $response->setVary(array('Accept-Encoding', 'User-Agent'));
