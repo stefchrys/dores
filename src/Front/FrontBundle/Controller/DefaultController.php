@@ -75,6 +75,7 @@ class DefaultController extends Controller
         $arr['nav_audio'] = ' ';
         $arr['nav_video'] = ' ';
         $arr['nav_info'] = ' ';
+        $arr['nav_contact'] = ' ';
         $arr['newsletter'] = $form->createView(); 
         $response = new Response();
         if ($request->isMethod('GET')) {
